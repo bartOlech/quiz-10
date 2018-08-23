@@ -1,3 +1,125 @@
+
+$fontColorIntroPage:rgb(236, 235, 235);
+$familyIntroPage:'Kosugi Maru', sans-serif;
+$bgElementIntroPage:#EB8500;
+
 body{
-    background:red;
+    margin: 0;
+    padding: 0;
+    background-color:#D95240;
+}
+.container{
+    
+}
+
+//style introduction page
+
+.img-logo{
+    background-image:url('../img/logo.png');
+    background-position: center;
+    width:200px;
+    height:200px;
+
+}
+.info-text{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-text h3{
+    text-align:center;
+
+}
+.welcome-section{
+
+}
+.welcome-section-line{
+    width:95%;
+    height:2px;
+    background-color:#fff;
+    border-radius:40px;
+    margin-top:-22px;
+}
+.info-text .welcome-section h2{
+    font-size:2.2em;
+}
+.info-text h3, .info-text h2{
+    color:$fontColorIntroPage;
+    font-family:$familyIntroPage;
+}
+.info-text label{
+    margin-top:30px;
+    margin-bottom:10px;
+    color:$fontColorIntroPage;
+    font-family:$familyIntroPage;
+}
+.info-text .input-nick{
+    margin-bottom:40px;
+    border-radius: 4px;
+    background-color:rgb(255, 235, 232);
+}
+//section arrow-box
+.arrow_box {
+	position: relative;
+    background: $bgElementIntroPage;
+    padding:6px;
+    border-radius:3px;
+    margin-bottom:17px;
+    color:$fontColorIntroPage;
+    font-family: $familyIntroPage;
+}
+
+.arrow_box:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(235, 133, 0, 0);
+	border-top-color: $bgElementIntroPage;
+	border-width: 15px;
+    margin-left: -15px;
+}
+.arrow_box span{
+    font-size: 1.4em;
+}
+.smile-icon{
+    width:20px;
+    height: 20px;
+}
+//end of the section arrow-box
+.start-test-button{
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    display: inline-block;
+    position: relative;
+    padding: 15px 33px;
+    top: 0;
+    font-size: 15px;
+    font-family: "Open Sans", Helvetica;
+    border-radius: 4px;
+    border-bottom: 1px solid rgb(202, 121, 14);
+    background:$bgElementIntroPage;
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba(202, 121, 14, 0.1 );
+    transform: translateZ(0);
+    transition: all 0.2s ease;
+    font-family:$familyIntroPage;
+}
+.start-test-button:hover{
+    top: -5px;
+    box-shadow: 0px 10px 10px rgba(202, 121, 14, 0.2 );
+    transform: rotateX(20deg);
+}
+.start-test-button:active{
+    top: 0px;
+    box-shadow: 0px 0px 0px rgba(202, 121, 14, 0.0 );
+    background: rgb(202, 121, 14);
 }

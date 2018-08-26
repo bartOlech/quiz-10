@@ -14,13 +14,25 @@
                 <div class="img-logo"></div>
                 <div class='welcome-section'><h2>Witaj</h2><div class='welcome-section-line'></div></div>
                 <h3>Quiz10 jest to test 10 pytań, który oceniu twoją wiedzę</h3>
-                <label for='input-nick'>Wprowadź swój nick:</label>
+                <label for='input-nick' class='input-nick-label'>Wprowadź swój nick:</label>
                 <!-- <div class="arrow_box">
                     Nie bądź taki, wprowadź jakiś nick
                 </div> -->
-                <input placeholder="np: Wiedzowy Tomek" id='input-nick' class='input-nick' type="text">
-
-
+                <input placeholder=" np: Wiedzowy Tomek" id='input-nick' class='input-nick' type="text">
+                <p class='select-category-text'>Wybierz kategorię</p>
+                <div class="container">
+                    <div class="button-wrap">
+                        <input class="hidden radio-label" type="radio" name="accept-offers" id="yes-button" checked="checked" />
+                        <label class="button-label" for="yes-button">
+                            <h1>Historia&nbsp;</h1>
+                        </label>
+                        <input class="hidden radio-label" type="radio" name="accept-offers" id="no-button"
+                            />
+                        <label class="button-label" for="no-button">
+                            <h1>Geografia</h1>
+                        </label>
+                    </div>
+                    </div>
 
                 <button class='basic-button start-quiz-button'>Zaczynajmy</button>
             </div>

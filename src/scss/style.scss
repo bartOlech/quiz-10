@@ -4,6 +4,14 @@ $familyIntroPage:'Inconsolata', sans-serif;
 $bgElementIntroPage:#EB8500;
 $basicBackground:#D95240;
 
+//select category 
+$dark: #292929;
+$light: #efefef;
+$red: #D91E18;
+$green: #2ECC71;
+$font-stack: "Lato", sans-serif;
+$small: 40em;
+
 body{
     margin: 0;
     padding: 0;
@@ -58,9 +66,13 @@ body{
     font-family:$familyIntroPage;
 }
 .info-text .input-nick{
-    margin-bottom:40px;
+    margin-bottom:10px;
     border-radius: 4px;
     background-color:rgb(255, 235, 232);
+}
+.input-nick-label{
+    font-size:1.4em;
+    padding-bottom:7px;
 }
 //section arrow-box
 .arrow_box {
@@ -97,7 +109,77 @@ body{
 //end of the section arrow-box
 
 //select category
-
+.select-category-text{
+    font-family: $familyIntroPage;
+    color:$fontColorIntroPage;
+    font-size:1.4em;
+    padding-bottom:7px;
+}
+.container {
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+  }
+  
+  .button-wrap {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    margin-top: -2.5em;
+    @media (max-width: $small) {margin-top: -1.5em;}
+  }
+  
+  .button-label {
+    display: inline-block;
+    padding: 0.4em 2em;
+    margin: 0.5em;
+    cursor: pointer;
+    color: $light;
+    border-radius: 0.25em;
+    background: $dark;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.22);
+    transition: 0.3s;
+    user-select: none;
+    h1 {
+      font-size: 1em;
+      font-family: $font-stack;
+    }
+    &:hover {
+      background:$bgElementIntroPage;
+      color: darken($light, 10%);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0 -3px 0 rgba(0,0,0,0.32);
+    }
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2), inset 0px -1px 0 rgba(0,0,0,0.22); 
+    }
+    @media (max-width: $small) {
+      padding: 0em 1em 3px;
+      margin: 0.25em;
+    }
+  }
+  #yes-button:checked + .button-label {
+    background: $bgElementIntroPage;
+    color: $light;
+    &:hover {
+      background: darken($bgElementIntroPage, 5%);
+      color: darken($light, 5%);
+    }
+  }
+  
+  #no-button:checked + .button-label {
+    background: $bgElementIntroPage;
+    color: $light;
+    &:hover {
+      background: darken($bgElementIntroPage, 5%);
+      color: darken($light, 5%);
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+///////////////
 
 .basic-button{
     background: transparent;
@@ -127,6 +209,7 @@ body{
     top: 0px; 
 }
 .start-quiz-button{
+    margin-top:40px;
     border-bottom: 1px solid rgb(202, 121, 14);
     background:$bgElementIntroPage;
     box-shadow: 0px 0px 0px rgba(202, 121, 14, 0.1 );
@@ -342,4 +425,13 @@ body{
         margin-top:10vw;
     }
 }
-
+@media only screen and (max-width:600px){
+    .input-nick-label, .select-category-text{
+        font-size:1em;
+    }
+}
+@media only screen and (max-width:500px){
+    .basic-button{
+        margin-bottom:10px;
+    }
+}

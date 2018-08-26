@@ -1,6 +1,6 @@
 
 $fontColorIntroPage:rgb(236, 235, 235);
-$familyIntroPage:'Kosugi Maru', sans-serif;
+$familyIntroPage:'Inconsolata', sans-serif;
 $bgElementIntroPage:#EB8500;
 $basicBackground:#D95240;
 
@@ -14,12 +14,8 @@ body{
 }
 
 //style introduction page
-
-.page-main-content{
-    display:none;
-}
 .page-start{
-    display:none;
+    display:inline;
 }
 
 .img-logo{
@@ -99,6 +95,10 @@ body{
     height: 20px;
 }
 //end of the section arrow-box
+
+//select category
+
+
 .basic-button{
     background: transparent;
     border: 0;
@@ -110,7 +110,7 @@ body{
     position: relative;
     padding: 15px 33px;
     top: 0;
-    font-size: 15px;
+    font-size: 1.3em;
     font-family: "Open Sans", Helvetica;
     border-radius: 4px;
     background:$bgElementIntroPage;
@@ -140,11 +140,14 @@ body{
 }
 //section question and answer
 
+.page-main-content{
+    display:none;
+}
 .page-questions{
     display:flex;
     flex-direction:column;
     align-items:center;
-    margin-top:20%;
+    margin-top:70px;
 }
 .question-number h3{
     font-family:$familyIntroPage;
@@ -209,7 +212,7 @@ body{
 
 }
 .button-next-question{
-    margin-top:9%;
+    margin-top:50px;
     border-bottom: 1px solid rgb(192, 27, 22);;
     background:rgb(247, 50, 44);
     box-shadow: 0px 0px 0px rgba(192, 27, 22, 0.1 );
@@ -225,29 +228,38 @@ body{
 
 //results
 
+
+.page-result{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    display:none;
+}
 .amount-of-points{
     font-size:1.8em;
     font-family: $familyIntroPage;
     color:$fontColorIntroPage;
 }
 
-
 //icon-result
 .face-ico{
     width:100px;
     height:100px;
-    margin:50px 0 50px 0;
+    margin:30px 0 50px 0;
 }
 .happy-ico{
     background-image: url('../img/happy-ico.png');
     background-size: cover;
 }
-//end icon-result
-.page-result{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+.indifferent-ico{
+    background-image: url('../img/indifferent-ico.png');
+    background-size: cover;
 }
+.sad-ico{
+    background-image: url('../img/sad-ico.png');
+    background-size: cover;
+}
+//end icon-result
 .result-hide{
     display:none
 }
@@ -255,7 +267,8 @@ body{
     display:flex;
     flex-direction: column;
     align-items: center;
-    
+    background-color:rgba(221, 184, 63, 0.849);
+    width:100vw;
 }
 .result-show p{
     text-align:center;
@@ -270,10 +283,63 @@ body{
     font-family: $familyIntroPage;
     font-size: 2em;
     color:$fontColorIntroPage;
+    padding-top:10px;
 }
 .result-line{
-    width:25%;
+    width:100%;
     height:2px;
     margin-top:5px;
     background-color:$fontColorIntroPage;
 }
+
+//ranking
+
+.ranking-btn{
+    margin-top:50px;
+    border-bottom: 1px solid rgb(250, 203, 202);;
+    background:rgb(247, 50, 44);
+    box-shadow: 0px 0px 0px rgba(192, 27, 22, 0.1 );
+  }
+  .ranking-btn:hover{
+    box-shadow: 0px 10px 10px rgba(192, 27, 22, 0.2 );
+  }
+  .ranking-btn:active{
+    box-shadow: 0px 0px 0px rgba(192, 27, 22, 0.0 );
+    background: rgb(226, 35, 28);
+}
+
+//desktop
+
+@media only screen and (min-width:1000px){
+    //start page
+    .img-logo{
+        margin-top:50px;
+    }
+    .welcome-section{
+        margin-bottom:30px;
+    }
+    //questions
+    .question-number h3{
+        font-size:2em;
+    }
+    .content-question p{
+        font-size:1.7em;
+    }
+    .content-answer ul li a{
+        font-size:1.1em;
+    }
+    
+    //result
+    .result-show{
+        width:85vw;
+        border-radius: 2px;
+        margin-top:50px;
+    }
+    .amount-of-points{
+        margin-top:30px;
+    }
+    .ranking-btn{
+        margin-top:10vw;
+    }
+}
+

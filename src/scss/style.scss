@@ -7,8 +7,6 @@ $basicBackground:#D95240;
 //select category 
 $dark: #292929;
 $light: #efefef;
-$red: #D91E18;
-$green: #2ECC71;
 $font-stack: "Lato", sans-serif;
 $small: 40em;
 
@@ -27,7 +25,7 @@ body{
 }
 
 .img-logo{
-    background-image:url('../img/logo.png');
+    background-image:url('../img/logo.png'); 
     background-position: center;
     width:200px;
     height:200px;
@@ -158,7 +156,7 @@ body{
       margin: 0.25em;
     }
   }
-  #yes-button:checked + .button-label {
+  #his-button:checked + .button-label {
     background: $bgElementIntroPage;
     color: $light;
     &:hover {
@@ -167,7 +165,7 @@ body{
     }
   }
   
-  #no-button:checked + .button-label {
+  #geo-button:checked + .button-label {
     background: $bgElementIntroPage;
     color: $light;
     &:hover {
@@ -222,9 +220,13 @@ body{
     background: rgb(202, 121, 14);
 }
 //section question and answer
-
+@keyframes showQuestion{
+    0%{opacity:0}
+    100%{opacity:1}
+}
 .page-main-content{
     display:none;
+    animation: showQuestion 1s;
 }
 .page-questions{
     display:flex;
@@ -249,7 +251,7 @@ body{
 }
 
 .content-answer ul li{
-    width:250px;
+    width:300px;
     height:50px;
     list-style:none;
     padding-bottom:10px;
@@ -282,6 +284,7 @@ body{
     0%{}
     100%{  background-color:$basicBackground}
 }
+
 .answer-1 a{
 
 }

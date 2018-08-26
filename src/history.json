@@ -1,0 +1,92 @@
+[
+    {
+        "id":0,
+        "question":"Kto wynalazł samolot?",
+        "trueAnswer":"Wilbur i Orville Wrightowie",
+        "answer1":"Nikola Tesla",
+        "answer2":"Benjamin Franklin",
+        "answer3":"Alan Turing",
+        "answer4":"Wilbur i Orville Wrightowie"
+    },
+    {
+        "id":1,
+        "question":"W którym wieku wymyślono szczepionkę?",
+        "trueAnswer":"XVIII w.",
+        "answer1":"XVI w.",
+        "answer2":"XVIII w.",
+        "answer3":"X w.",
+        "answer4":"XX w."
+    },
+    {
+        "id":2,
+        "question":"W którym roku odbył się hołd Pruski?",
+        "trueAnswer":"1525 r.",
+        "answer1":"1525 r.",
+        "answer2":"1420 r.",
+        "answer3":"1783 r.",
+        "answer4":"1221 r."
+    },
+    {
+        "id":3,
+        "question":"Kim był Aleksander Wielki?",
+        "trueAnswer":"Królem Macedonii",
+        "answer1":"Włądcą Persji",
+        "answer2":"Królem Macedonii",
+        "answer3":"Cesarzem Japonii",
+        "answer4":"Prezydentem Stanów Zjednoczonych"
+    },
+    {
+        "id":4,
+        "question":"Jak nazywa się Bóg w Judaizmie",
+        "trueAnswer":"Jahwe",
+        "answer1":"Allah",
+        "answer2":"Wisznu",
+        "answer3":"Jahwe",
+        "answer4":"Budda"
+    },
+    {
+        "id":5,
+        "question":"jak nazywała się klacz Józefa Piłsudskiego",
+        "trueAnswer":"Kasztanka",
+        "answer1":"Kasztanka",
+        "answer2":"Błyskawica",
+        "answer3":"Miła",
+        "answer4":"Hrabina"
+    },
+    {
+        "id":6,
+        "question":"W jaki dzień wybuchło powstanie Warszawskie",
+        "trueAnswer":"1 sierpnia",
+        "answer1":"1 września",
+        "answer2":"20 września",
+        "answer3":"6 lipca",
+        "answer4":"1 sierpnia"
+    },
+    {
+        "id":7,
+        "question":"Jak miała na imię pierwsza żona Władysław II Jagiełło",
+        "trueAnswer":"Jadwiga",
+        "answer1":"Katarzyna",
+        "answer2":"Maria",
+        "answer3":"Jadwiga",
+        "answer4":"Elżbieta"
+    },
+    {
+        "id":8,
+        "question":"Kto podbił imperium Inków",
+        "trueAnswer":"Francisco Pizarro",
+        "answer1":"Hernán Cortés",
+        "answer2":"Krzysztof Kolumb",
+        "answer3":"Bartolomeu Dias",
+        "answer4":"Francisco Pizarro"
+    },
+    {
+        "id":9,
+        "question":"Kiedy zburzono mur Berliński",
+        "trueAnswer":"9 listopada 1989",
+        "answer1":"13 sierpnia 1981",
+        "answer2":"9 listopada 1989",
+        "answer3":"12 maja 1973",
+        "answer4":"23 sierpnia 1980"
+    }
+]

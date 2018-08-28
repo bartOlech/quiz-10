@@ -38,6 +38,12 @@
             </div>
         </div>
         <div id='page-main-content' class="page-main-content">
+            <div class='timer'>
+                <svg class='timer-content' width="250" height="250" viewbox="0 0 250 250">
+                    <path class="timer-border" id="timer-border" transform="translate(125, 125)"/>
+                    <path class="timer-loader" id="timer-loader" transform="translate(125, 125) scale(.84)"/>
+                </svg>
+            </div>
             <div id='page-questions' class="page-questions">
                 <div id='question-number' class="question-number">
                     <h3>Pytanie 1</h3>
@@ -58,24 +64,24 @@
                 <button id='button-next-question' class='button-next-question basic-button'>Następne pytanie</button>
             </div>
         </div>
-        <div class="page-result">
-            <div class="amount-of-points">
-                <p>Twój wynik to: <span>14 pkt</span></p>
+        <div id="page-result" class="page-result">
+            <div id='amount-of-points' class="amount-of-points">
+                <p>Twój wynik to: <span></span></p>
             </div>
             <div class="face-ico indifferent-ico"></div>
-            <div class="result-hide">
+            <div id='result-1' class="result-hide">
                 <b>Rewelacyjny wynik<div class='result-line'></div></b>
                 <p>Wow, jest naprawdę super. Posiadasz ponadprzeciętną inteligencję. Z łatwością radzisz sobie z problemami, które stawia tobie los</p>
             </div>
-            <div class="result-hide">
+            <div id='result-2' class="result-hide">
                 <b>Dobry wynik<div class='result-line'></div></b>
                 <p>Jest nieźle. Odpowiedziałeś dobrze na większość pytań. Jeszcze trochę nauki i spokojnie możesz startować w jakimś teleturnieju</p>
             </div>
-            <div class="result-hide">
+            <div id='result-3' class="result-hide">
                 <b>Średni wynik <div class='result-line'></div></b>
                 <p>Odpowiedziałeś dobrze na sporą część pytań, jednak aby stać się geniuszem musisz jeszcze trochę przyswoić nauki</p>
             </div>
-            <div class="result-show">
+            <div id='result-4' class="result-hide">
                 <b>Słaby wynik<div class='result-line'></div></b>
                 <p>Nie poszło Ci najlepiej. Jednak pamiętaj, że intensywne przyswajanie wiedzy pozwoli Ci wyjść na wyżyny</p>
             </div>

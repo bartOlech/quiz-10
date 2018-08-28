@@ -81,5 +81,8 @@ export const CheckAnswer=(categoryQuestions)=>{
             }
          });
         } 
+        if(questionNumber===10){
+          Result(pointsAmount);
+        }
       })
 }

@@ -1,6 +1,6 @@
 import {Result} from './results';
 
-const x = document.querySelectorAll('a');
+const answers = document.querySelectorAll('a');
 let elementClicked='';
 const questionNumberH3=document.querySelector('#question-number h3');
 const buttonNextQuestions=document.querySelector('#button-next-question');
@@ -16,20 +16,20 @@ const answer4=document.querySelector('#answer-4');
 
 export const CheckAnswer=(categoryQuestions)=>{
   newestArray=categoryQuestions;
-  //adds text to the page from array
+  //first adds text to the page from array
   question.innerHTML=newestArray[0].question;
   answer1.innerHTML=newestArray[0].answer1;
   answer2.innerHTML=newestArray[0].answer2;
   answer3.innerHTML=newestArray[0].answer3;
   answer4.innerHTML=newestArray[0].answer4;
 
-  //chooses the correct answer
-    for(let i = 0; i < x.length; i++){
-        x[i].addEventListener("click", function (){
-          for(let i = 0; i < x.length; i++){
-            if(x[i].style.color === ""){
-              x[i].setAttribute('style', 'background:#EB8500');
-              x[i].setAttribute('class', '')
+  //first chooses the correct answer
+    for(let i = 0; i < answers.length; i++){
+      answers[i].addEventListener("click", function (){
+          for(let i = 0; i < answers.length; i++){
+            if(answers[i].style.color === ""){
+              answers[i].setAttribute('style', 'background:#EB8500');
+              answers[i].setAttribute('class', '')
               this.setAttribute('style', 'background:#D95240; border:1px solid #ecebeb')
               this.setAttribute('class', 'checked')
               elementClicked=this
@@ -40,9 +40,9 @@ export const CheckAnswer=(categoryQuestions)=>{
       //button that adds another question
       buttonNextQuestions.addEventListener('click', function(){
         //clear select styles
-        for(let i = 0; i < x.length; i++){
-          x[i].setAttribute('class', '');
-          x[i].setAttribute('style', 'background:#EB8500');
+        for(let i = 0; i < answers.length; i++){
+          answers[i].setAttribute('class', '');
+          answers[i].setAttribute('style', 'background:#EB8500');
         }
 
         questionNumber++;
@@ -50,39 +50,35 @@ export const CheckAnswer=(categoryQuestions)=>{
 
         if(elementClicked.innerHTML===newestArray[0].trueAnswer){
           pointsAmount++;
-          console.log(pointsAmount)
-        }else{
-          console.log(pointsAmount)
         }
-
-        //removes the first element from array
-        newestArray=newestArray.filter(e=>e.id!==idArray)
-        idArray++;
-
-        question.innerHTML=newestArray[0].question;
-        answer1.innerHTML=newestArray[0].answer1;
-        answer2.innerHTML=newestArray[0].answer2;
-        answer3.innerHTML=newestArray[0].answer3;
-        answer4.innerHTML=newestArray[0].answer4;
-
-        //updates text (number of questions)
+        //if questions array is empty show the result otherwise removes the first element from array
+        if(questionNumber===11){
+          Result(pointsAmount);
+        }else{
+          newestArray=newestArray.filter(e=>e.id!==idArray)
+          idArray++;
+  
+          question.innerHTML=newestArray[0].question;
+          answer1.innerHTML=newestArray[0].answer1;
+          answer2.innerHTML=newestArray[0].answer2;
+          answer3.innerHTML=newestArray[0].answer3;
+          answer4.innerHTML=newestArray[0].answer4;
+          //updates text (number of questions)
         questionNumberH3.innerHTML=`Pytanie ${questionNumber}`;
         
-        for(let i = 0; i < x.length; i++){
-          x[i].addEventListener("click", function (){
-            for(let i = 0; i < x.length; i++){
-              if(x[i].style.color === ""){
-                x[i].setAttribute('style', 'background:#EB8500');
-                x[i].setAttribute('class', '')
+        for(let i = 0; i < answers.length; i++){
+          answers[i].addEventListener("click", function (){
+            for(let i = 0; i < answers.length; i++){
+              if(answers[i].style.color === ""){
+                answers[i].setAttribute('style', 'background:#EB8500');
+                answers[i].setAttribute('class', '')
                 this.setAttribute('style', 'background:#D95240; border:1px solid #ecebeb')
                 this.setAttribute('class', 'checked')
                 elementClicked=this
               }
             }
          });
-        } 
-        if(questionNumber===10){
-          Result(pointsAmount);
         }
+        } 
       })
 }

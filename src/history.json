@@ -46,7 +46,7 @@
     },
     {
         "id":5,
-        "question":"jak nazywała się klacz Józefa Piłsudskiego",
+        "question":"Jak nazywała się klacz Józefa Piłsudskiego",
         "trueAnswer":"Kasztanka",
         "answer1":"Kasztanka",
         "answer2":"Błyskawica",
@@ -64,7 +64,7 @@
     },
     {
         "id":7,
-        "question":"Jak miała na imię pierwsza żona Władysław II Jagiełło",
+        "question":"Jak miała na imię pierwsza żona Władysława II Jagiełło",
         "trueAnswer":"Jadwiga",
         "answer1":"Katarzyna",
         "answer2":"Maria",

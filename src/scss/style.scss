@@ -242,9 +242,13 @@ body{
     0%{opacity:0}
     100%{opacity:1}
 }
+.pre-animation{
+    opacity:0;
+}
 .page-main-content{
     display:none;
     animation: showQuestion 1s;
+    opacity:1;
 }
 .page-questions{
     display:flex;

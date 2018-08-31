@@ -22,6 +22,67 @@ let loader = document.querySelector('#timer-loader')
 , π = Math.PI
 , t = 100;
 
+function nextQuestions(){
+  α = 0
+  //adding animation to next question
+  pageMainContent.classList.add('pre-animation');
+  pageMainContent.classList.remove('page-main-content');
+  //disabled buttonNextQuestions
+  isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
+  //changes the content of the button
+  questionNumber===9?buttonNextQuestions.innerHTML='Pokaż wynik':null;
+  //clear select styles
+  for(let i = 0; i < answers.length; i++){
+    answers[i].setAttribute('class', '');
+    answers[i].setAttribute('style', 'background:#EB8500');
+  }
+  questionNumber++;
+  //checks whether the correct answer was selects 
+  elementClicked.innerHTML===newestArray[0].trueAnswer?pointsAmount++:null;
+  //if questions array is empty show the result otherwise removes the first element from array
+  if(questionNumber===11){
+    Result(pointsAmount);
+  }else{
+    newestArray=newestArray.filter(e=>e.id!==idArray)
+    idArray++;
+    question.innerHTML=newestArray[0].question;
+    answer1.innerHTML=newestArray[0].answer1;
+    answer2.innerHTML=newestArray[0].answer2;
+    answer3.innerHTML=newestArray[0].answer3;
+    answer4.innerHTML=newestArray[0].answer4;
+    //updates text (number of questions)
+  questionNumberH3.innerHTML=`Pytanie ${questionNumber}`;
+  //adding animation to next question
+  setTimeout(function(){
+    pageMainContent.classList.remove('pre-animation')
+    pageMainContent.classList.add('page-main-content');
+  },50)
+  console.log(pointsAmount)
+  console.log(questionNumber)
+  console.log(idArray)
+}
+}
+
+function analyzeAnswer(){
+  for(let i = 0; i < answers.length; i++){
+    answers[i].addEventListener("click", function (){
+      //disabled buttonNextQuestions
+      isMarked=true
+      isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
+      for(let i = 0; i < answers.length; i++){
+        if(answers[i].style.color === ""){
+          answers[i].setAttribute('style', 'background:#EB8500');
+          answers[i].setAttribute('class', '')
+          this.setAttribute('style', 'background:#D95240; border:1px solid #ecebeb')
+          this.setAttribute('class', 'checked')
+          elementClicked=this
+          isMarked=false;
+        }
+      }
+   });
+  }
+}
+
 export const CheckAnswer=(categoryQuestions)=>{
   newestArray=categoryQuestions;
   //first adds text to the page from array
@@ -33,6 +94,9 @@ export const CheckAnswer=(categoryQuestions)=>{
 
   isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
 
+    const endOfTime=()=>{
+      nextQuestions()
+    }
     //timer countdown
     (function draw() {
     α++;
@@ -47,97 +111,22 @@ export const CheckAnswer=(categoryQuestions)=>{
             +  y  + ' z';
     loader.setAttribute( 'd', anim );
     border.setAttribute( 'd', anim );
-    
+    if(α===179){
+      document.querySelector('#timer-border').classList.add('timer-animation');
+    }
+    if(α===359){
+      document.querySelector('#timer-border').classList.remove('timer-animation');
+      endOfTime()
+    }
     setTimeout(draw, t); // Redraw
     })();
 
   //first chooses the correct answer
-    for(let i = 0; i < answers.length; i++){
-      answers[i].addEventListener("click", function (){
-        isMarked=true
-        isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
-          for(let i = 0; i < answers.length; i++){
-            if(answers[i].style.color === ""){
-              answers[i].setAttribute('style', 'background:#EB8500');
-              answers[i].setAttribute('class', '')
-              this.setAttribute('style', 'background:#D95240; border:1px solid #ecebeb')
-              this.setAttribute('class', 'checked')
-              elementClicked=this
-            }
-          }
-       });
-      } 
+  analyzeAnswer();
       //button that adds another question
       buttonNextQuestions.addEventListener('click', function(){
-           //timer countdown
-           α=0;
-           (function draw() {
-           α++;
-           α %= 360;
-           let r = ( α * π / 180 )
-               , x = Math.sin( r ) * 125
-               , y = Math.cos( r ) * - 125
-               , mid = ( α > 180 ) ? 1 : 0
-               , anim = 'M 0 0 v -125 A 125 125 1 ' 
-                   + mid + ' 1 ' 
-                   +  x  + ' ' 
-                   +  y  + ' z';
-           loader.setAttribute( 'd', anim );
-           border.setAttribute( 'd', anim );
-           
-           setTimeout(draw, t); // Redraw
-           })();
-        //adding animation to next question
-        pageMainContent.classList.add('pre-animation');
-        pageMainContent.classList.remove('page-main-content');
-        //disabled buttonNextQuestions
-        isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
-        //changes the content of the button
-        questionNumber===9?buttonNextQuestions.innerHTML='Pokaż wynik':null;
-        //clear select styles
-        for(let i = 0; i < answers.length; i++){
-          answers[i].setAttribute('class', '');
-          answers[i].setAttribute('style', 'background:#EB8500');
-        }
-        questionNumber++;
-        //checks whether the correct answer was selects 
-        elementClicked.innerHTML===newestArray[0].trueAnswer?pointsAmount++:null;
-        //if questions array is empty show the result otherwise removes the first element from array
-        if(questionNumber===11){
-          Result(pointsAmount);
-        }else{
-          newestArray=newestArray.filter(e=>e.id!==idArray)
-          idArray++;
-          question.innerHTML=newestArray[0].question;
-          answer1.innerHTML=newestArray[0].answer1;
-          answer2.innerHTML=newestArray[0].answer2;
-          answer3.innerHTML=newestArray[0].answer3;
-          answer4.innerHTML=newestArray[0].answer4;
-          //updates text (number of questions)
-        questionNumberH3.innerHTML=`Pytanie ${questionNumber}`;
-        //adding animation to next question
-        setTimeout(function(){
-          pageMainContent.classList.remove('pre-animation')
-          pageMainContent.classList.add('page-main-content');
-        },50)
+        nextQuestions();
+        analyzeAnswer();
         
-        for(let i = 0; i < answers.length; i++){
-          answers[i].addEventListener("click", function (){
-            //disabled buttonNextQuestions
-            isMarked=true
-            isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;
-            for(let i = 0; i < answers.length; i++){
-              if(answers[i].style.color === ""){
-                answers[i].setAttribute('style', 'background:#EB8500');
-                answers[i].setAttribute('class', '')
-                this.setAttribute('style', 'background:#D95240; border:1px solid #ecebeb')
-                this.setAttribute('class', 'checked')
-                elementClicked=this
-                isMarked=false;
-              }
-            }
-         });
-        }
-        } 
-      })
+    })
 }

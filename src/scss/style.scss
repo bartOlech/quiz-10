@@ -15,9 +15,6 @@ body{
     padding: 0;
     background-color:$basicBackground;
 }
-.container{
-    
-}
 
 //style introduction page
 .page-start{
@@ -355,8 +352,99 @@ body{
 }
 
 //results
-
-
+.page-ranking{
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    display:none;
+}
+.ranking-cont {
+    max-width: 400px;
+    padding: 3rem;
+    background: #f06d06;
+    width:50%;
+    margin-top:35%;
+    --notchSize: 20px;
+    position: relative;
+    clip-path: 
+      polygon(
+        0% var(--notchSize), 
+        var(--notchSize) 0%, 
+        calc(100% - var(--notchSize)) 0%, 
+        100% var(--notchSize), 
+        100% calc(100% - var(--notchSize)), 
+        calc(100% - var(--notchSize)) 100%, 
+        var(--notchSize) 100%, 
+        0% calc(100% - var(--notchSize))
+      );
+}
+.ranking-cont p{
+    font-family:$familyIntroPage;
+    color:rgba(0, 0, 0, 0.692);
+    font-size:2.5em;
+    margin-top:-30px;
+    margin-left:-20px;
+}
+//close button
+.close-ranking {
+    display: block;
+    position: relative;
+    right: 0;
+    top: -55px;
+    width: 32px;
+    height: 32px;
+    transition: transform .25s ease-in-out;
+    margin-left:90%;
+    margin-top:-10%;
+    cursor: pointer;
+}
+.close-ranking:hover {
+    transform: rotate(180deg);
+}
+.close-ranking:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,0.5);
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+.close-ranking:after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,0.5);
+    transform: rotate(-45deg);
+    transform-origin: center;
+}
+.ranking-list{
+    margin-top:-20px;
+}
+.ranking-list li{
+    list-style:none;
+    font-family: $familyIntroPage;
+    font-size:1.5em;
+    margin-left:-15%;
+    padding:5px;
+    color:rgba(0, 0, 0, 0.692);
+}
+.ranking-list li span{
+    margin-left:10px;
+}
 .page-result{
     display:flex;
     flex-direction:column;

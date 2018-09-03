@@ -61,6 +61,7 @@ function nextQuestions(){
 }
 
 function analyzeAnswer(){
+  document.querySelector('#points-amount').innerHTML=`${pointsAmount} pkt`
   for(let i = 0; i < answers.length; i++){
     answers[i].addEventListener("click", function (){
       //disabled buttonNextQuestions

@@ -26,7 +26,10 @@ body{
     background-position: center;
     width:200px;
     height:200px;
-
+    margin:auto;
+    display:flex;
+    opacity:1;
+    transition:1500ms;
 }
 .info-text{
     display:flex;
@@ -352,11 +355,16 @@ body{
 }
 
 //results
+.points-amount{
+    padding-left:20px;
+}
 .page-ranking{
     overflow: hidden;
     display:flex;
     justify-content: center;
     display:none;
+    opacity:1;
+    transition: 1500ms ;
 }
 .ranking-cont {
     max-width: 400px;
@@ -390,7 +398,7 @@ body{
     display: block;
     position: relative;
     right: 0;
-    top: -55px;
+    top:-27%;
     width: 32px;
     height: 32px;
     transition: transform .25s ease-in-out;
@@ -438,7 +446,7 @@ body{
     list-style:none;
     font-family: $familyIntroPage;
     font-size:1.5em;
-    margin-left:-15%;
+    margin-left:0;
     padding:5px;
     color:rgba(0, 0, 0, 0.692);
 }
@@ -560,9 +568,17 @@ body{
         margin-top:10vw;
     }
 }
+@media only screen and (min-width:580px){
+    .close-ranking {
+        top:-20%;
+    }
+}
 @media only screen and (max-width:600px){
     .input-nick-label, .select-category-text{
         font-size:1em;
+    }
+    .ranking-list li{
+        margin-left:-50px;
     }
 }
 @media only screen and (max-width:500px){

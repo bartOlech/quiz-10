@@ -57,9 +57,6 @@ function nextQuestions(){
     pageMainContent.classList.remove('pre-animation')
     pageMainContent.classList.add('page-main-content');
   },50)
-  console.log(pointsAmount)
-  console.log(questionNumber)
-  console.log(idArray)
 }
 }
 
@@ -98,29 +95,30 @@ export const CheckAnswer=(categoryQuestions)=>{
       nextQuestions()
     }
     //timer countdown
-    (function draw() {
-    α++;
-    α %= 360;
-    let r = ( α * π / 180 )
-        , x = Math.sin( r ) * 125
-        , y = Math.cos( r ) * - 125
-        , mid = ( α > 180 ) ? 1 : 0
-        , anim = 'M 0 0 v -125 A 125 125 1 ' 
-            + mid + ' 1 ' 
-            +  x  + ' ' 
-            +  y  + ' z';
-    loader.setAttribute( 'd', anim );
-    border.setAttribute( 'd', anim );
-    if(α===179){
-      document.querySelector('#timer-border').classList.add('timer-animation');
-    }
-    if(α===359){
-      document.querySelector('#timer-border').classList.remove('timer-animation');
-      endOfTime()
-    }
-    setTimeout(draw, t); // Redraw
-    })();
-
+      (function draw() {
+        if(questionNumber<11){
+          α++;
+          α %= 360;
+          let r = ( α * π / 180 )
+              , x = Math.sin( r ) * 125
+              , y = Math.cos( r ) * - 125
+              , mid = ( α > 180 ) ? 1 : 0
+              , anim = 'M 0 0 v -125 A 125 125 1 ' 
+                  + mid + ' 1 ' 
+                  +  x  + ' ' 
+                  +  y  + ' z';
+          loader.setAttribute( 'd', anim );
+          border.setAttribute( 'd', anim );
+          if(α===179){
+            document.querySelector('#timer-border').classList.add('timer-animation');
+          }
+          if(α===359){
+            document.querySelector('#timer-border').classList.remove('timer-animation');
+            endOfTime()
+          }
+          setTimeout(draw, t); // Redraw
+        }
+          })();
   //first chooses the correct answer
   analyzeAnswer();
       //button that adds another question

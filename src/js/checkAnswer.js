@@ -14,6 +14,7 @@ const answer2=document.querySelector('#answer-2');
 const answer3=document.querySelector('#answer-3');
 const answer4=document.querySelector('#answer-4');
 const pageMainContent= document.querySelector('#page-main-content');
+const timerBorder=document.querySelector('#timer-border');
 let isMarked=false;
 //timer
 let loader = document.querySelector('#timer-loader')
@@ -111,10 +112,10 @@ export const CheckAnswer=(categoryQuestions)=>{
           loader.setAttribute( 'd', anim );
           border.setAttribute( 'd', anim );
           if(α===179){
-            document.querySelector('#timer-border').classList.add('timer-animation');
+            timerBorder.classList.add('timer-animation');
           }
           if(α===359){
-            document.querySelector('#timer-border').classList.remove('timer-animation');
+            timerBorder.classList.remove('timer-animation');
             endOfTime()
           }
           setTimeout(draw, t); // Redraw
@@ -124,6 +125,7 @@ export const CheckAnswer=(categoryQuestions)=>{
   analyzeAnswer();
       //button that adds another question
       buttonNextQuestions.addEventListener('click', function(){
+        timerBorder.classList.remove('timer-animation');
         nextQuestions();
         analyzeAnswer();
         

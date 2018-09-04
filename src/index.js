@@ -6,29 +6,31 @@ import GeographyQuestions from './geography.json'
 const pageRanking= document.querySelector('#page-ranking');
 const pageResult=document.querySelector('#page-result');
 const imgLogo=document.querySelector('#img-logo');
+const inputNick=document.querySelector('#input-nick');
 
 const userInfo={
     nick:''
 }
 
 document.querySelector('#start-quiz-button').addEventListener('click', function(){
+if(inputNick.value.length!=0){
     imgLogo.style.display='none';
-    userInfo.nick=document.querySelector('#input-nick').value;
+    userInfo.nick=inputNick.value;
     document.querySelector('.ranking-btn').addEventListener('click', function(){
-        imgLogo.setAttribute('style', 'display:flex');
-        imgLogo.classList.add('pre-animation');
-        imgLogo.classList.remove('img-logo');
-        pageRanking.setAttribute('style', 'display:flex; margin-top:-25%;');
-        pageRanking.classList.add('pre-animation');
-        pageRanking.classList.remove('page-ranking');
-        pageResult.setAttribute('style', 'display:none');
-        document.querySelector('#ranking-nick').innerHTML=userInfo.nick;
-        setTimeout(function(){
-            pageRanking.classList.remove('pre-animation');
-            pageRanking.classList.add('page-ranking');
-            imgLogo.classList.add('img-logo');
-        imgLogo.classList.remove('pre-animation');
-          },50)
+    imgLogo.setAttribute('style', 'display:flex');
+    imgLogo.classList.add('pre-animation');
+    imgLogo.classList.remove('img-logo');
+    pageRanking.setAttribute('style', 'display:flex; margin-top:-25%;');
+    pageRanking.classList.add('pre-animation');
+    pageRanking.classList.remove('page-ranking');
+    pageResult.setAttribute('style', 'display:none');
+    document.querySelector('#ranking-nick').innerHTML=userInfo.nick;
+    setTimeout(function(){
+        pageRanking.classList.remove('pre-animation');
+        pageRanking.classList.add('page-ranking');
+        imgLogo.classList.add('img-logo');
+    imgLogo.classList.remove('pre-animation');
+        },50)
     })
 
     document.querySelector('#close-ranking').addEventListener('click', function(){
@@ -43,5 +45,8 @@ document.querySelector('#start-quiz-button').addEventListener('click', function(
     }else if(document.querySelector('#geo-button').checked){
         Category(GeographyQuestions)
     }
+}else{
+    document.querySelector('#arrow-box').setAttribute('style', 'display:inline')
+}
 })
 

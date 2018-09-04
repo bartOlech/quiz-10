@@ -73,7 +73,7 @@ body{
     padding-bottom:7px;
 }
 //section arrow-box
-.arrow_box {
+.arrow-box {
 	position: relative;
     background: $bgElementIntroPage;
     padding:6px;
@@ -81,9 +81,10 @@ body{
     margin-bottom:17px;
     color:$fontColorIntroPage;
     font-family: $familyIntroPage;
+    display:none;
 }
 
-.arrow_box:after {
+.arrow-box:after {
 	top: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -97,7 +98,7 @@ body{
 	border-width: 15px;
     margin-left: -15px;
 }
-.arrow_box span{
+.arrow-box span{
     font-size: 1.4em;
 }
 .smile-icon{

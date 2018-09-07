@@ -17,9 +17,7 @@ if(inputNick.value.length!=0){
     imgLogo.style.display='none';
     userInfo.nick=inputNick.value;
     document.querySelector('.ranking-btn').addEventListener('click', function(){
-    imgLogo.setAttribute('style', 'display:flex');
-    imgLogo.classList.add('pre-animation');
-    imgLogo.classList.remove('img-logo');
+
     pageRanking.setAttribute('style', 'display:flex; margin-top:-25%;');
     pageRanking.classList.add('pre-animation');
     pageRanking.classList.remove('page-ranking');
@@ -28,8 +26,6 @@ if(inputNick.value.length!=0){
     setTimeout(function(){
         pageRanking.classList.remove('pre-animation');
         pageRanking.classList.add('page-ranking');
-        imgLogo.classList.add('img-logo');
-    imgLogo.classList.remove('pre-animation');
         },50)
     })
 
@@ -39,7 +35,7 @@ if(inputNick.value.length!=0){
         pageResult.setAttribute('style', 'display:flex')
     })
     document.querySelector('#page-start').setAttribute('style', 'display:none');
-    document.querySelector('#page-main-content').setAttribute('style', 'display:inline-block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)');
+    document.querySelector('#page-main-content').setAttribute('style', 'display:inline-block;');
     if(document.querySelector('#his-button').checked){
         CheckAnswer(HistoryQuestions)
     }else if(document.querySelector('#geo-button').checked){

@@ -83,6 +83,7 @@ function analyzeAnswer(){
   }
 }
 
+
 export const CheckAnswer=(categoryQuestions)=>{
   newestArray=categoryQuestions;
   //first adds text to the page from array

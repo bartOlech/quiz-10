@@ -6,7 +6,7 @@ const faceIco=document.querySelector('#face-ico')
 
 export const Result=(points)=>{
     document.querySelector('#page-main-content').setAttribute('style', 'display:none');
-    document.querySelector('#page-result').setAttribute('style', 'display:flex; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)');
+    document.querySelector('#page-result').setAttribute('style', 'display:flex;');
     document.querySelector('#amount-of-points p span').innerHTML=`${points} pkt`;
     if(points>8){
         result1.classList.remove('result-hide');

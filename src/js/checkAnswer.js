@@ -64,7 +64,8 @@ function nextQuestions(){
 function analyzeAnswer(){
   document.querySelector('#points-amount').innerHTML=`${pointsAmount} pkt`
   for(let i = 0; i < answers.length; i++){
-    answers[i].addEventListener("click", function (){
+    answers[i].addEventListener("click", function (e){
+      e.preventDefault()
       //disabled buttonNextQuestions
       isMarked=true
       isMarked?buttonNextQuestions.disabled=false:buttonNextQuestions.disabled=true;

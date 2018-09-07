@@ -1,7 +1,7 @@
 import './scss/style.scss';
-import {Category} from './js/category'
 import HistoryQuestions from './history.json';
 import GeographyQuestions from './geography.json'
+import {CheckAnswer} from './js/checkAnswer';
 
 const pageRanking= document.querySelector('#page-ranking');
 const pageResult=document.querySelector('#page-result');
@@ -41,9 +41,9 @@ if(inputNick.value.length!=0){
     document.querySelector('#page-start').setAttribute('style', 'display:none');
     document.querySelector('#page-main-content').setAttribute('style', 'display:inline-block; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%)');
     if(document.querySelector('#his-button').checked){
-        Category(HistoryQuestions)
+        CheckAnswer(HistoryQuestions)
     }else if(document.querySelector('#geo-button').checked){
-        Category(GeographyQuestions)
+        CheckAnswer(GeographyQuestions)
     }
 }else{
     document.querySelector('#arrow-box').setAttribute('style', 'display:inline')

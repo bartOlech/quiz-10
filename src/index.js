@@ -10,6 +10,8 @@ const inputNick=document.querySelector('#input-nick');
 const headerResult=document.querySelector('#header-result');
 const amountPoints=document.querySelector('#amount-of-points');
 const faceIco=document.querySelector('#face-ico');
+const rankingBtn=document.querySelector('.ranking-btn');
+let showRanking=false;
 
 const userInfo={
     nick:''
@@ -19,7 +21,9 @@ document.querySelector('#start-quiz-button').addEventListener('click', function(
 if(inputNick.value.length!=0){
     imgLogo.style.display='none';
     userInfo.nick=inputNick.value;
-    document.querySelector('.ranking-btn').addEventListener('click', function(){
+    rankingBtn.addEventListener('click', function(){
+    showRanking?rankingBtn.disabled=false:rankingBtn.disabled=true;
+    showRanking=true;
     amountPoints.setAttribute('style', 'display:none')
     faceIco.setAttribute('style', 'display:none')
     pageRanking.setAttribute('style', 'display:flex;');
@@ -34,6 +38,8 @@ if(inputNick.value.length!=0){
     })
 
     document.querySelector('#close-ranking').addEventListener('click', function(){
+        showRanking?rankingBtn.disabled=false:rankingBtn.disabled=true;
+        showRanking=false;
         imgLogo.style.display='none';
         pageRanking.setAttribute('style', 'display:none')
         amountPoints.setAttribute('style', 'display:flex')

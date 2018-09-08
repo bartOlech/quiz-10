@@ -513,6 +513,7 @@ body{
     background-color:rgba(221, 184, 63, 0.63);
     width:100vw;
     box-shadow: 1px 0px 2px rgb(204, 154, 18);
+    margin-top:50px;
 }
 .shadow{
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
@@ -581,7 +582,6 @@ body{
     .result-show{
         width:85vw;
         border-radius: 2px;
-        margin-top:50px;
     }
     .amount-of-points{
         margin-top:30px;
@@ -614,5 +614,12 @@ body{
 @media only screen and (max-width:500px){
     .basic-button{
         margin-bottom:10px;
+    }
+    .close-ranking{
+        display:none;
+    }
+    .ranking-cont p{
+        font-size:1.3em;
+        padding-bottom:5px;
     }
 }

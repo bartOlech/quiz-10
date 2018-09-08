@@ -15,8 +15,9 @@
             <div class="info-text">
                 <div class='welcome-section'><h2>Witaj</h2><div class='welcome-section-line'></div></div>
                 <h3>Quiz10 jest to test 10 pytań, który oceniu twoją wiedzę</h3>
-                <label for='input-nick' class='input-nick-label'>Wprowadź swój nick:</label>
-               <div id='arrow-box' class="arrow-box">
+                <label for='input-nick' id='input-nick-label' class='input-nick-label'>Wprowadź swój nick:</label>
+                <div id='empty-space' class='empty-space'></div>
+                <div id='arrow-box' class="arrow-box">
                     Nie bądź taki, wprowadź jakiś nick
                 </div>
                 <input placeholder=" np: Wiedzowy Tomek" id='input-nick' class='input-nick' type="text">
@@ -52,15 +53,15 @@
                 </div>
                 <div class="content-question">
                     <p id='question'>
-                        Kto był pierwszym człowiekiem na księżycu?
+                        
                     </p>
                 </div>
                 <div class="content-answer">
                     <ul>
-                        <li  class='answer'><a href='#' id='answer-1'>Neil Armstrong</a></li>
-                        <li  class='answer'><a href='#' id='answer-2'>Jan Nowak</a></li>
-                        <li  class='answer'><a href='#' id='answer-3'>Edward Kurzaw</a></li>
-                        <li  class='answer'><a href='#' id='answer-4'>Jacek Bień</a></li>
+                        <li  class='answer'><a href='#' id='answer-1'></a></li>
+                        <li  class='answer'><a href='#' id='answer-2'></a></li>
+                        <li  class='answer'><a href='#' id='answer-3'></a></li>
+                        <li  class='answer'><a href='#' id='answer-4'></a></li>
                     </ul>
                 </div>
                 <button id='button-next-question' class='button-next-question basic-button'>Następne pytanie</button>
@@ -83,7 +84,7 @@
             <div id='amount-of-points' class="amount-of-points">
                 <p>Twój wynik to: <span></span></p>
             </div>
-            <div id='face-ico' class="face-ico"></div>
+            <div id='face-ico-box' class='face-ico-box'><div id='face-ico' class="face-ico"></div></div>
             <div class="wrap">
                 <div id='result-1' class="result-hide shadow ">
                     <b>Rewelacyjny wynik<div class='result-line'></div></b>

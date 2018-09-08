@@ -26,8 +26,9 @@ body{
 .img-logo{
     background-image:url('../img/logo.png'); 
     background-position: center;
-    width:200px;
-    height:200px;
+    background-size: cover;
+    width:150px;
+    height:150px;
     margin:auto;
     display:flex;
     opacity:1;
@@ -75,6 +76,10 @@ body{
     padding-bottom:7px;
 }
 //section arrow-box
+.empty-space{
+    height:24px;
+    display:none;
+}
 .arrow-box {
 	position: relative;
     background: $bgElementIntroPage;
@@ -235,7 +240,7 @@ body{
     height:48px;
     position: absolute;
     left:77%;
-    top:13%;
+    top:3%;
 }
 .timer-animation{
     z-index: 2;
@@ -244,7 +249,7 @@ body{
 .timer{
     position:absolute;
     left:77%;
-    top:13%;
+    top:3%;
 }
 .timer-content{
     display: block;
@@ -283,7 +288,7 @@ body{
     display:flex;
     flex-direction:column;
     align-items:center;
-    margin-top:70px;
+    margin-top:10px;
 }
 .question-number h3{
     font-family:$familyIntroPage;
@@ -291,7 +296,6 @@ body{
     color:$fontColorIntroPage;
 }
 .content-question{
-    margin-top:30px;
     position:relative;
 }
 .content-question p{
@@ -377,6 +381,7 @@ body{
     opacity:1;
     transition: opacity 1500ms  ;
     margin-top:5px;
+    margin-bottom:-15px;
 }
 .ranking-cont {
     max-width: 400px;
@@ -485,10 +490,19 @@ body{
 }
 
 //icon-result
+.face-ico-box{
+    position:relative;
+    width:100px;
+    height:100px;
+    margin-bottom:20px;
+    margin-top: -20px;
+    display:flex;
+}
 .face-ico{
     width:100px;
     height:100px;
     margin:30px 0 50px 0;
+    position: absolute;
 }
 .happy-ico{
     background-image: url('../img/happy-ico.png');
@@ -602,6 +616,15 @@ body{
     .img-logo{
         margin-top:50px;
     }
+    .timer-border{
+        top:9%;
+    }
+    .timer{
+        top:9%;
+    }
+    .page-questions{
+        margin-top:60px;
+    }
 }
 @media only screen and (max-width:600px){
     .input-nick-label, .select-category-text{
@@ -609,6 +632,10 @@ body{
     }
     .ranking-list li{
         margin-left:-50px;
+    }
+    .img-logo{
+        width:100px;
+        height:100px;
     }
 }
 @media only screen and (max-width:500px){

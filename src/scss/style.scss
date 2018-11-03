@@ -25,6 +25,11 @@ body{
     display:inline;
 }
 
+.user-form{
+    display:flex;
+    flex-direction: column;
+}
+
 .img-logo{
     background-image:url('../img/logo.png'); 
     background-position: center;

@@ -15,6 +15,7 @@ const answer3=document.querySelector('#answer-3');
 const answer4=document.querySelector('#answer-4');
 const pageMainContent= document.querySelector('#page-main-content');
 const timerBorder=document.querySelector('#timer-border');
+const userName = document.querySelector('#input-nick');
 let isMarked=false;
 //timer
 let loader = document.querySelector('#timer-loader')
@@ -85,6 +86,44 @@ function analyzeAnswer(){
 
 
 export const CheckAnswer=(categoryQuestions)=>{
+
+//   fetch('http://localhost:8080/users', {
+//     method: "put",
+//     body: JSON.stringify({a: 1, b: 'Textual content'})
+// })
+// .then(res => res.json())
+// .then(res => {
+//     console.log("Dodałem użytkownika:");
+//     console.log(res);
+// })
+
+function update(data) {
+  return fetch(`http://localhost:8080/users?user=${userName.value}`, {
+    method: 'put',
+    body: JSON.stringify(data),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(checkStatus)
+}
+
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response
+  } else {
+    var error = new Error(response.statusText)
+    error.response = response
+    throw error
+  }
+}
+
+const data = {statement:'halko'}
+update(data)
+
+
+
   newestArray=categoryQuestions;
   //first adds text to the page from array
   question.innerHTML=newestArray[0].question;

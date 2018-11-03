@@ -4,6 +4,12 @@ const Schema = mongoose.Schema;
 const dataSchema = new Schema({
     user:{
         type: String
+    },
+    points:{
+        type: Number
+    },
+    type:{
+        type:String
     }
 })
 

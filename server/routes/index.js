@@ -7,6 +7,6 @@ const userController = require('../controllers/userController');
 router.get('/history', historyController.data);
 router.get('/geography', geoController.data);
 router.put('/users', userController.user);
-router.get('/users', userController.user);
+router.get('/users', userController.showUsers);
 
 module.exports = router;

@@ -43,6 +43,31 @@ function nextQuestions(){
   elementClicked.innerHTML===newestArray[0].trueAnswer?pointsAmount++:null;
   //if questions array is empty show the result otherwise removes the first element from array
   if(questionNumber===11){
+
+    function update() {
+      return fetch(`http://localhost:8080/users?user=${userName.value}&points=${pointsAmount}`, {
+        method: 'put',
+        body: JSON.stringify(),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(checkStatus)
+    }
+    
+    function checkStatus(response) {
+      if (response.status >= 200 && response.status < 300) {
+        return response
+      } else {
+        var error = new Error(response.statusText)
+        error.response = response
+        throw error
+      }
+    }
+    
+    update()
+
     Result(pointsAmount);
   }else{
     newestArray=newestArray.filter(e=>e.id!==idArray)
@@ -86,41 +111,6 @@ function analyzeAnswer(){
 
 
 export const CheckAnswer=(categoryQuestions)=>{
-
-//   fetch('http://localhost:8080/users', {
-//     method: "put",
-//     body: JSON.stringify({a: 1, b: 'Textual content'})
-// })
-// .then(res => res.json())
-// .then(res => {
-//     console.log("Dodałem użytkownika:");
-//     console.log(res);
-// })
-
-function update(data) {
-  return fetch(`http://localhost:8080/users?user=${userName.value}`, {
-    method: 'put',
-    body: JSON.stringify(data),
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-  })
-    .then(checkStatus)
-}
-
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response
-  } else {
-    var error = new Error(response.statusText)
-    error.response = response
-    throw error
-  }
-}
-
-const data = {statement:'halko'}
-update(data)
 
 
 

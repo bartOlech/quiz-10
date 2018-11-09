@@ -13,6 +13,15 @@ exports.user = (req, res)=>{
     })
 }
 
+exports.dbUsers = (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    mongoose.connect('mongodb://localhost:27017/quiz10-questions', {useNewUrlParser:true});
+    UserData.find({type:'users'}).sort({points:-1}).limit(5).then((users)=>{
+        mongoose.connection.close();
+        res.send(users)
+    })
+}
+
 exports.showUsers = (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     mongoose.connect('mongodb://localhost:27017/quiz10-questions', {useNewUrlParser:true});
@@ -22,3 +31,6 @@ exports.showUsers = (req, res)=>{
         res.send(users)
     })
 }
+
+
+// Utwórz odzielne kolekcje dla history i geo, teraz tylko pobiera z bazy dane (trzeba je umieścić w apce)

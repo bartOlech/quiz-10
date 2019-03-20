@@ -24,6 +24,53 @@ let loader = document.querySelector('#timer-loader')
 , π = Math.PI
 , t = 100;
 
+function getUserFromDB(pointsAmount) {
+  return fetch(`http://localhost:8080/dbusers`, {
+    method: 'get',
+    body: JSON.stringify(),
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => res.json().then(json => {
+
+      const user1 = {
+        user: userName.value,
+        points: pointsAmount
+      }
+      const user2 = {
+        user: JSON.stringify(json[0].user),
+        points: JSON.stringify(json[0].points)
+      }
+      const user3 = {
+        user: JSON.stringify(json[1].user),
+        points: JSON.stringify(json[1].points)
+      }
+      const user4 = {
+        user: JSON.stringify(json[2].user),
+        points: JSON.stringify(json[2].points)
+      }
+      const user5 = {
+        user: JSON.stringify(json[3].user),
+        points: JSON.stringify(json[3].points)
+      }
+
+
+      document.querySelector('#ranking-nick').innerHTML = user1.user;
+      document.querySelector('#ranking-nick-2').innerHTML = user2.user;
+      document.querySelector('#ranking-nick-3').innerHTML = user3.user;
+      document.querySelector('#ranking-nick-4').innerHTML = user4.user;
+      document.querySelector('#ranking-nick-5').innerHTML = user5.user;
+
+      document.querySelector('#points-amount').innerHTML = user1.points;
+      document.querySelector('#points-amount-2').innerHTML = user2.points;
+      document.querySelector('#points-amount-3').innerHTML = user3.points;
+      document.querySelector('#points-amount-4').innerHTML = user4.points;
+      document.querySelector('#points-amount-5').innerHTML = user5.points;
+    }))
+}
+
 function nextQuestions(){
   α = 0
   //adding animation to next question
@@ -43,7 +90,7 @@ function nextQuestions(){
   elementClicked.innerHTML===newestArray[0].trueAnswer?pointsAmount++:null;
   //if questions array is empty show the result otherwise removes the first element from array
   if(questionNumber===11){
-
+    getUserFromDB(pointsAmount);
     function update() {
       return fetch(`http://localhost:8080/users?user=${userName.value}&points=${pointsAmount}`, {
         method: 'put',

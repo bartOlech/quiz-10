@@ -15,7 +15,10 @@ const userInfo={
     nick:''
 }
 
+
+
 document.querySelector('#start-quiz-button').addEventListener('click', function(){
+
 if(inputNick.value.length!=0){
     imgLogo.style.display='none';
     userInfo.nick=inputNick.value;

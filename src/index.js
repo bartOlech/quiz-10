@@ -35,7 +35,6 @@ if(inputNick.value.length!=0){
         pageRanking.setAttribute('style', 'display:flex;');
         pageRanking.classList.add('pre-animation');
         pageRanking.classList.remove('page-ranking');
-        document.querySelector('#ranking-nick').innerHTML=userInfo.nick;
         setTimeout(function(){
             pageRanking.classList.remove('pre-animation');
             pageRanking.classList.add('page-ranking');

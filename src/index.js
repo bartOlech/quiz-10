@@ -55,12 +55,18 @@ if(inputNick.value.length!=0){
         .then(res=>res.json())
         .then(question=>{
             CheckAnswer(question)
+        }).then(() => {
+            document.querySelector('#content-answer').style.opacity = 1;
+            document.querySelector('#loader-section-questions').style.display = 'none';
         })
     }else if(document.querySelector('#geo-button').checked){
         fetch('http://localhost:8080/geography')
         .then(res=>res.json())
         .then(question=>{
             CheckAnswer(question)
+        }).then(() => {
+            document.querySelector('#content-answer').style.opacity = 1;
+            document.querySelector('#loader-section').style.display = 'none';
         })
     }
 }else{

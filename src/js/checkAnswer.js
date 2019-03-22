@@ -17,6 +17,7 @@ const pageMainContent= document.querySelector('#page-main-content');
 const timerBorder=document.querySelector('#timer-border');
 const userName = document.querySelector('#input-nick');
 let isMarked=false;
+const circleLoader = document.querySelector('#loader-section-ranking');
 //timer
 let loader = document.querySelector('#timer-loader')
 , border = document.querySelector('#timer-border')
@@ -67,7 +68,10 @@ function getUserFromDB() {
       document.querySelector('#points-amount-3').innerHTML = `${user3.points} pkt.`;
       document.querySelector('#points-amount-4').innerHTML = `${user4.points} pkt.`;
       document.querySelector('#points-amount-5').innerHTML = `${user5.points} pkt.`;
-    }))
+    })).then(() => {
+      circleLoader.style.display = 'none';
+      document.querySelector('#ranking-list').style.opacity = 1;
+    })
 }
 
 function nextQuestions(){

@@ -3,13 +3,23 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = require('./routes')
+const mongoose = require('mongoose');
+
+// MongoDB connection
+mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true
+    })
+    .then(console.log('MongoDB conected')).catch(err => console.log(err))
+mongoose.Promise = global.Promise;
 
 app.set(path.join(__dirname, 'view'));
 app.set('view engine', 'pug');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use('/', router);
 
 module.exports = app;

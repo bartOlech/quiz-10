@@ -9,5 +9,8 @@ router.get('/geography', geoController.data);
 router.put('/users', userController.user);
 router.get('/users', userController.showUsers);
 router.get('/dbusers', userController.dbUsers);
+router.get('/', (req, res) => {
+    res.send('hello Bro!!!')
+});
 
 module.exports = router;

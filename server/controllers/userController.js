@@ -36,10 +36,10 @@ exports.dbUsers = (req, res) => {
     }).limit(5).then((users) => {
         mongoose.connection.close();
         res.send(users)
-    }).catch(err => console.log())
+    }).catch(err => console.log(err))
 }
 
-exports.showUsers = (req, res) => {
+exports.users = (req, res) => {
     mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true
         })

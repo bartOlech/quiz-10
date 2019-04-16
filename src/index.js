@@ -51,7 +51,7 @@ if(inputNick.value.length!=0){
     document.querySelector('#page-start').setAttribute('style', 'display:none');
     document.querySelector('#page-main-content').setAttribute('style', 'display:inline-block;');
     if(document.querySelector('#his-button').checked){
-        fetch('http://localhost:8080/history')
+        fetch('https://quiz-10.herokuapp.com/history')
         .then(res=>res.json())
         .then(question=>{
             CheckAnswer(question)
@@ -60,13 +60,13 @@ if(inputNick.value.length!=0){
             document.querySelector('#loader-section-questions').style.display = 'none';
         })
     }else if(document.querySelector('#geo-button').checked){
-        fetch('http://localhost:8080/geography')
+        fetch('https://quiz-10.herokuapp.com/geography')
         .then(res=>res.json())
         .then(question=>{
             CheckAnswer(question)
         }).then(() => {
             document.querySelector('#content-answer').style.opacity = 1;
-            document.querySelector('#loader-section').style.display = 'none';
+            document.querySelector('#loader-section-questions').style.display = 'none';
         })
     }
 }else{

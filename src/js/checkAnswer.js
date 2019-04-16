@@ -26,7 +26,7 @@ let loader = document.querySelector('#timer-loader')
 , t = 100;
 
 function getUserFromDB() {
-  return fetch(`http://localhost:8080/dbusers`, {
+  return fetch(`https://quiz-10.herokuapp.com/dbusers`, {
     method: 'get',
     body: JSON.stringify(),
     headers: {
@@ -35,7 +35,6 @@ function getUserFromDB() {
     }
   })
     .then(res => res.json().then(json => {
-      
       const user1 = {
         user: JSON.stringify(json[0].user),
         points: JSON.stringify(json[0].points)
@@ -95,7 +94,7 @@ function nextQuestions(){
   if(questionNumber===11){
     
     function update() {
-      return fetch(`http://localhost:8080/users?user=${userName.value}&points=${pointsAmount}`, {
+      return fetch(`https://quiz-10.herokuapp.com/users?user=${userName.value}&points=${pointsAmount}`, {
         method: 'put',
         body: JSON.stringify(),
         headers: {
@@ -103,7 +102,10 @@ function nextQuestions(){
           'Content-Type': 'application/json'
         }
       })
-        .then(checkStatus).then(getUserFromDB(pointsAmount))
+        .then(checkStatus).then( () => {
+          getUserFromDB(pointsAmount)  
+        }
+        )
     }
     
     function checkStatus(response) {

@@ -1,13 +1,17 @@
-import {Result} from './results';
-import {CheckAnswer} from './checkAnswer';
+import {
+    Result
+} from './results';
+import {
+    CheckAnswer
+} from './checkAnswer';
 
 
 
 
 
-export const Category=(categoryQuestions)=>{
-   
+export const Category = (categoryQuestions) => {
+
     CheckAnswer(categoryQuestions);
 
-      
+
 }
